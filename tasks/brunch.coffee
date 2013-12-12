@@ -34,3 +34,7 @@ module.exports = (grunt) ->
 
     # Finish on close
     brunch.on 'close', done unless async
+
+    # Quit child process on exit
+    process.on 'exit', ->
+      brunch.kill 'SIGHUP'
