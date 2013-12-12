@@ -1,0 +1,44 @@
+{
+  "name": "grunt-brunch",
+  "description": "Grunt Brunch wrapper",
+  "version": "0.0.0",
+  "homepage": "https://github.com/kenhkan/grunt-brunch",
+  "author": {
+    "name": "Kenneth Kan",
+    "email": "kenhkan@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kenhkan/grunt-brunch"
+  },
+  "bugs": {
+    "url": "https://github.com/grunt-brunch/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/kenhkan/grunt-brunch/blob/master/LICENSE"
+    }
+  ],
+  "main": "Gruntfile.coffee",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {},
+  "dependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-cafe-mocha": "~0.1.10",
+    "brunch": "~1.7.13",
+    "grunt-coffeelint": "0.0.8",
+    "coffee-script": "~1.6.3"
+  },
+  "devDependencies": {},
+  "peerDependencies": {},
+  "keywords": [
+    "grunt",
+    "grunt-plugin",
+    "brunch"
+  ]
+}
