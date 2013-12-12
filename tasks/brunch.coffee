@@ -2,15 +2,16 @@
 
 module.exports = (grunt) ->
   grunt.registerMultiTask "brunch", "Brunch asset pipeline", ->
-    # Always run asynchronously
-    done = @async()
-
     # Get the options
     options = grunt.config('brunch')[@target]
     grunt.verbose.writeflags options, "Options"
-    { action, port } = options
+    { action, port, async } = options
     action ?= 'serve'
     port ?= 8888
+    async ?= false
+
+    # Always run asynchronously unless otherwise specified
+    done = @async() unless async
 
     # Available command list
     command = switch action
@@ -32,4 +33,4 @@ module.exports = (grunt) ->
     brunch.stderr.pipe process.stdout
 
     # Finish on close
-    brunch.on 'close', done
+    brunch.on 'close', done unless async
