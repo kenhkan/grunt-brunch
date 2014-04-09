@@ -1,5 +1,7 @@
 { spawn } = require 'child_process'
 
+BASE = "#{__dirname}/../"
+
 module.exports = (grunt) ->
   grunt.registerMultiTask "brunch", "Brunch asset pipeline", ->
     # Get the options
@@ -14,15 +16,16 @@ module.exports = (grunt) ->
     done = @async() unless async
 
     # Available command list
+    brunchPath = "#{BASE}node_modules/.bin/brunch"
     command = switch action
       when 'serve'
-        "node_modules/.bin/brunch watch --server --port #{port}"
+        "#{brunchPath} watch --server --port #{port}"
       when 'watch'
-        "node_modules/.bin/brunch watch --port #{port}"
+        "#{brunchPath} watch --port #{port}"
       when 'compile'
-        "node_modules/.bin/brunch build"
+        "#{brunchPath} build"
       when 'build'
-        "node_modules/.bin/brunch build -P"
+        "#{brunchPath} build -P"
 
     # Run it
     [ cmd, args... ] = command.split ' '
